@@ -1,4 +1,4 @@
-
+const ROOT = `${__dirname}/../`;
 
 const test = (req, res) => {
     res.status(200).json({
@@ -7,6 +7,13 @@ const test = (req, res) => {
     });
 }
 
+const root = (req, res) => {
+    res.sendFile('/views/index.html', {
+        root: ROOT
+    });
+}
+
 module.exports = {
-    test
+    test,
+    root
 };
